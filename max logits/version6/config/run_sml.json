@@ -1,0 +1,60 @@
+{
+  "snapshot": "pretrained/r101_os8_base_cty.pth",
+  "dataset": "cityscapes",
+  "score_mode": "standardized_max_logit",
+
+  "forward_dir": "./test/dropped_object/forward",
+  "backward_dir": "./test/dropped_object/backward",
+  "roi_config": "./config/ROI.config",
+  "output_dir": "./out/sml",
+  "save_heatmap": true,
+
+  "b_suppress_iters": 4,
+  "b_suppress_r0": 8,
+  "b_suppress_delta_r": 2,
+  "bap_kernel": 3,
+  "dilation_rate": 6,
+
+  "bg_diff_sigma": 3.0,
+  "bg_diff_thresh": 0.12,
+  "bg_diff_gate_floor": 0.2,
+  "bg_diff_open": 3,
+  "bg_diff_close": 5,
+
+  "percentile": 99.65,
+  "bbox_thresh": null,
+  "min_cap": 0.12,
+  "z_k": 2.3,
+
+  "pos_adjust": true,
+  "pos_min_frac": 0.006,
+  "pos_max_frac": 0.03,
+
+  "median_ksize": null,
+  "gauss_sigma": null,
+  "open_r": null,
+  "close_r": null,
+  "extra_dilate": 1,
+
+  "glare_alpha": 0.75,
+  "glare_v_pct": 97.0,
+  "glare_sat_thr": 0.35,
+  "glare_grow_r": 4,
+
+  "min_fill": 0.24,
+  "min_foreground": 48,
+  "min_box_score": 0.2,
+
+  "min_area_frac": 0.0020,
+  "max_area_frac": 0.5,
+  "min_side_frac": 0.015,
+  "max_aspect": 7.5,
+  "border_frac": 0.006,
+  "y_area_alpha": 1.0,
+
+  "merge_center_dist": 24.0,
+  "merge_iou": 0.12,
+
+  "hyst_frac": 0.82,
+  "hyst_delta": 0.05
+}

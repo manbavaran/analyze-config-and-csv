@@ -1,0 +1,13 @@
+# 기본적으로 모든 파일 무시
+*
+
+# 그러나 .json, .config, .csv 파일은 예외로 허용
+!*.json
+!*.config
+!*.csv
+
+# 모든 폴더는 추적되게
+!*/ 
+
+# .gitignore 파일 자체는 항상 추적되도록
+!.gitignore

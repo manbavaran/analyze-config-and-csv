@@ -1,0 +1,74 @@
+{
+  "snapshot": "pretrained/r101_os8_base_cty.pth",
+  "score_mode": "max_logit",
+
+  "front_dir": "./test_img/front/fallobj",
+  "rear_dir": "./test_img/rear/fallobj",
+  "roi_config": "./config/ROI.config",
+  "output_dir": "./out/bboxes",
+  "save_heatmap": true,
+
+  
+  "median_ksize": null,
+  "gauss_sigma": null,
+  "open_r": null,
+  "close_r": null,
+  "extra_dilate": 2,
+
+  
+  "glare_alpha": 0.75,
+  "glare_v_pct": 97.0,
+  "glare_sat_thr": 0.35,
+  "glare_grow_r": 4,
+
+  
+  "percentile": 99.6,
+  "min_cap": 0.12,
+  "z_k": 2.3,
+
+  
+  "pos_adjust": true,
+  "pos_min_frac": 0.003,
+  "pos_max_frac": 0.028,
+
+  
+  "min_fill": 0.28,
+  "min_foreground": 56,
+  "min_box_score": 0.14,
+
+  "min_area_frac": 0.0020,
+  "max_area_frac": 0.5,
+  "min_side_frac": 0.015,
+  "max_aspect": 7.5,
+  "border_frac": 0.006,
+  "y_area_alpha": 1.0,
+
+  "merge_center_dist": 24.0,
+  "merge_iou": 0.12,
+
+  "hyst_frac": 0.72,
+  "hyst_delta": 0.05,
+
+  "bg_diff_sigma": 5.0,
+  "bg_diff_thresh": 0.19,
+  "bg_diff_gate_floor": 0.2,
+  "bg_diff_open": 4,
+  "bg_diff_close": 7,
+  "bg_gate_mode": "component",
+
+  "road_sat_thr": 0.16,
+  "road_edge_thr": 0.07,
+  "score_gamma": 0.94,
+
+  "comp_min_overlap_frac": 0.30,
+  "comp_min_overlap_pix": 48,
+
+  "border_ring": 6,
+  "min_border_contrast": 0.10,
+  "min_border_grad": 0.25,
+
+  "tex_min_entropy": 2.40,
+  "tex_max_anisotropy": 0.90,
+  "tex_edge_thr": 0.07,
+  "tex_sat_guard": 0.20
+}
