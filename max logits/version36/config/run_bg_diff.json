@@ -1,0 +1,104 @@
+{
+  
+  "video": null,
+  "images": null,
+  "bootstrap": null,
+  "output": "./outputs/bg_diff",
+  "history": 120,
+  "learning_rate": 0.05,
+  "min_learning_diff": 6.0,
+  "threshold_sigma": 2.30,
+  "min_area": 0.00045,
+
+  "blur": 1.5,
+  "open_radius": 3,
+  "close_radius": 5,
+  "dilate_radius": 3,
+
+  "visualise": false,
+  "color_space": "YCrCb",
+  "bootstrap_size": 30,
+  "bootstrap_stride": 5,
+  "log_level": "INFO",
+
+  "roi_config": "config/ROI.config",
+  "roi_view": "forward",
+  "update_background": false,
+  "apply_roi_mask": true,
+  "apply_ignore_mask": true,
+  "use_roi_baseline": true,
+
+  "forward_dir": "./test/dropped_object/forward",
+  "backward_dir": "./test/dropped_object/backward",
+  "score_aggregation": "l2",
+
+  "shadow_suppression": true,
+  "shadow_intensity_threshold": 20.0,
+  "shadow_chroma_threshold": 10.0,
+  "shadow_logchroma_threshold": 0.08,
+
+  "channel_weights": [0.25, 1.15, 1.15],
+  "use_bilateral": false,
+  "bilateral_d": 9,
+  "bilateral_sigma_color": 75.0,
+  "bilateral_sigma_space": 75.0,
+
+  "use_lbp": true,
+  "lbp_P": 8,
+  "lbp_R": 1,
+  "texture_percentile": 80.0,
+  "texture_factor": 0.8,
+  "texture_keep_area_px": 4000,
+
+  "hue_threshold": 16.0,
+  "sat_threshold": 32.0,
+  "luma_ratio_min": 0.50,
+  "luma_ratio_max": 0.96,
+  "intensity_drop_factor": 0.5,
+  "edge_ratio_threshold": 0.025,
+
+  "shadow_long_max_aspect": 7.0,
+  "shadow_long_min_length_px": 180,
+  "shadow_vratio_mean_max": 0.90,
+
+  "post_max_aspect": 8.0,
+  "post_min_length_px": 140,
+  "post_vratio_mean_max": 0.92,
+
+  "sec_luma_ratio_min": 0.45,
+  "sec_luma_ratio_max": 0.93,
+  "sec_intensity_drop": 8.0,
+  "sec_chroma_rg": 0.035,
+  "sec_logchroma": 0.10,
+  "sec_grad_angle": 18.0,
+  "sec_grad_ratio": 1.05,
+  "sec_min_shadow_tail": 80,
+  "sec_boundary_ring": 5,
+
+  "ws_seed_frac": 0.58,
+  "ws_min_seed_dist_px": 18,
+  "ws_min_region_area_px": 60,
+  "ws_use_grad": true,
+  "ws_use_vratio": true,
+
+  "box_min_fill": 0.14,
+  "box_max_area_frac": 0.25,
+  "box_min_side_frac": 0.0075,
+  "box_max_aspect": 4.5,
+  "box_border_frac": 0.0,
+  "box_y_area_alpha": 1.4,
+  "merge_center_dist": 8,
+  "merge_iou_thr": 0.07,
+  "merge_max_iters": 3,
+
+  "grad_angle_threshold": 15.0,
+  "grad_mag_ratio_max": 1.05,
+  "grad_bg_mag_min": 8.0,
+
+  "use_hysteresis": true,
+  "threshold_sigma_hi": 1.00,
+  "threshold_sigma_lo": 0.78,
+  "use_local_threshold": false,
+  "local_tiles": 3
+
+}

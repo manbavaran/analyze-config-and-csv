@@ -1,0 +1,176 @@
+{
+  "share": {
+    "snapshot": "pretrained/r101_os8_base_cty.pth",
+    "score_mode": "max_logit",
+
+    "front_dir": "./test_img/front/fallobj",
+    "rear_dir": "./test_img/rear/fallobj",
+    "roi_config": "./config/ROI.config",
+    "output_dir": "./out/bboxes",
+    "save_heatmap": true,
+    "debug_report": true,
+
+    "median_ksize": null,
+    "gauss_sigma": null
+
+  },
+
+  "front": {
+    "percentile": 99.75, 
+    "min_cap": 0.105, 
+    "z_k": 1.0,
+
+    "hyst_frac": 0.97, 
+    "hyst_delta": 0.015,
+
+    "open_r": 0, 
+    "close_r": 0, 
+    "extra_dilate": 1,
+
+    "merge_center_dist": 28.0, 
+    "merge_iou": 0.18,
+
+    "min_fill": 0.073,
+    "min_foreground": 40,
+    "min_box_score": 0.11,
+
+    "min_area_frac": 0.0012,
+    "max_area_frac": 0.5,
+
+    "min_side_frac": 0.005,
+    "max_aspect": 9.5,
+    
+    "border_frac": 0.006,
+    "y_area_alpha": 2.0,
+
+    "area_thresh": 1400,
+    "area_iters_small": 1,
+
+    "glare_alpha": 0.75,
+    "glare_v_pct": 97.0,
+    "glare_sat_thr": 0.35,
+    "glare_grow_r": 4,
+    
+    "pos_adjust": true,
+    "pos_min_frac": 0.0030,
+    "pos_max_frac": 0.025,
+
+    "bg_diff_sigma": 5.0,
+    "bg_diff_thresh": 0.14,
+    "bg_diff_gate_floor": 0.08,
+    "bg_diff_open": 4,
+    "bg_diff_close": 7,
+    "bg_gate_mode": "soft",
+
+    "road_sat_thr": 0.14,
+    "road_edge_thr": 0.06,
+    "score_gamma": 1.25,
+
+    "comp_min_overlap_frac": 0.12,
+    "comp_min_overlap_pix": 16,
+
+    "border_ring": 6,
+    "min_border_contrast": 0.10,
+    "min_border_grad": 0.13,
+
+    "tex_min_entropy": 2.60,
+    "tex_max_anisotropy": 0.84,
+    "tex_edge_thr": 0.07,
+    "tex_sat_guard": 0.22,
+
+    "lane_alpha": 0.55,
+    "lane_sat_thr": 0.18,
+    "lane_val_thr": 0.76,
+    "lane_grow_r": 3,
+    "lane_diff_guard": 0.22,
+
+    "lane_box_sat_thr": 0.22,
+    "lane_box_val_thr": 0.68,
+    "lane_box_min_aspect": 6.0,
+    "lane_box_max_edge_density": 0.12,
+    "lane_box_max_border_contrast": 0.08,
+    "lane_box_sobel_ksize": 3
+
+  },
+
+  "rear": {
+    "percentile": 99.70, 
+    "min_cap": 0.095, 
+    "z_k": 0.90,
+    
+    "hyst_frac": 0.97, 
+    "hyst_delta": 0.015,
+    
+    "open_r": 2, 
+    "close_r": 3, 
+    "extra_dilate": 2,
+
+    "merge_center_dist": 58.0, 
+    "merge_iou": 0.14,
+
+    "min_fill": 0.045,
+    "min_foreground": 24,
+    "min_box_score": 0.035,
+
+    "min_area_frac": 0.0011,
+    "max_area_frac": 0.5,
+
+    "min_side_frac": 0.006,
+    "max_aspect": 7.5,
+    
+    "border_frac": 0.006,
+    "y_area_alpha": 2.0,
+
+    "area_thresh": 1600,
+    "area_iters_small": 1,
+
+    "glare_alpha": 0.75,
+    "glare_v_pct": 97.0,
+    "glare_sat_thr": 0.35,
+    "glare_grow_r": 4,
+    
+    "pos_adjust": true,
+    "pos_min_frac": 0.0030,
+    "pos_max_frac": 0.025,
+
+    "bg_diff_sigma": 5.0,
+    "bg_diff_thresh": 0.14,
+    "bg_diff_gate_floor": 0.08,
+    "bg_diff_open": 4,
+    "bg_diff_close": 7,
+    "bg_gate_mode": "soft",
+
+    "road_sat_thr": 0.14,
+    "road_edge_thr": 0.06,
+    "score_gamma": 1.25,
+
+    "comp_min_overlap_frac": 0.12,
+    "comp_min_overlap_pix": 16,
+
+    "border_ring": 6,
+    "min_border_contrast": 0.10,
+    "min_border_grad": 0.13,
+
+    "tex_min_entropy": 2.30,
+    "tex_max_anisotropy": 0.84,
+    "tex_edge_thr": 0.07,
+    "tex_sat_guard": 0.22,
+
+    "lane_alpha": 0.65,
+    "lane_sat_thr": 0.18,
+    "lane_val_thr": 0.80,
+    "lane_grow_r": 3,
+    "lane_diff_guard": 0.22,
+
+    "lane_box_sat_thr": 0.22,
+    "lane_box_val_thr": 0.68,
+    "lane_box_min_aspect": 6.0,
+    "lane_box_max_edge_density": 0.12,
+    "lane_box_max_border_contrast": 0.08,
+    "lane_box_sobel_ksize": 3
+    
+  }
+
+
+
+}
