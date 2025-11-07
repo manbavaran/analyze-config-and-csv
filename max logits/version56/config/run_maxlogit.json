@@ -1,0 +1,292 @@
+{
+  "share": {
+    "snapshot": "pretrained/r101_os8_base_cty.pth",
+    "score_mode": "max_logit",
+
+    "front_dir": "./test_img/front/fallobj",
+    "rear_dir": "./test_img/rear/fallobj",
+    "roi_config": "./config/ROI.config",
+    "output_dir": "./out/bboxes",
+    "save_heatmap": true,
+    "debug_report": true,
+
+    "median_ksize": null,
+    "gauss_sigma": null
+
+  },
+
+  "front": {
+    "percentile": 99.75, 
+    "z_k": 1.0,
+
+    "min_cap": 0.105, 
+    "adaptive": {
+      "enabled": false,
+      "p98_thresh": 0.07,
+      "pos_frac_thresh": 0.0008,
+      "relax_step": 0.0075,
+      "min_allowed_t": 0.09
+    },
+
+    "shadow_refine": {
+      "enabled": false,
+      "shadow_v_drop": 0.08,
+      "shadow_s_delta": 0.06,
+      "shadow_h_delta_deg": 12.0,
+      "topk_frac": 0.18,
+      "shadow_penalty": 0.40,
+      "sh_ratio_clip": 0.60,
+      "shrink_frac": 0.08
+    },
+
+    "filter_boxes_lane_like": {
+      "enabled": false,
+      "anisotropy_thr": 0.75,
+      "v_thr0": 0.70,
+      "s_thr": 0.22,
+      "lane_frac_thr": 0.55,
+      "shrink_frac": 0.12
+    },
+
+    "shrink_if_hollow": {
+      "enabled": false,
+      "thr": 0.20,
+      "frac": 0.10
+    },
+
+    "hyst_frac": 0.97, 
+    "hyst_delta": 0.015,
+
+    "open_r": 0, 
+    "close_r": 0, 
+    "extra_dilate": 1,
+
+    "merge_center_dist": 28.0, 
+    "merge_iou": 0.18,
+
+    "min_fill": 0.073,
+    "min_foreground": 40,
+    "min_box_score": 0.11,
+
+    "min_area_frac": 0.0012,
+    "max_area_frac": 0.5,
+
+    "min_side_frac": 0.005,
+    "max_aspect": 9.5,
+    
+    "border_frac": 0.006,
+    "y_area_alpha": 2.0,
+
+    "area_thresh": 1400,
+    "area_iters_small": 1,
+
+    "glare_alpha": 0.75,
+    "glare_v_pct": 97.0,
+    "glare_sat_thr": 0.35,
+    "glare_grow_r": 4,
+    
+    "pos_adjust": true,
+    "pos_min_frac": 0.0030,
+    "pos_max_frac": 0.025,
+
+    "bg_diff_sigma": 5.0,
+    "bg_diff_thresh": 0.14,
+    "bg_diff_gate_floor": 0.08,
+    "bg_diff_open": 4,
+    "bg_diff_close": 7,
+    "bg_gate_mode": "soft",
+
+    "road_sat_thr": 0.14,
+    "road_edge_thr": 0.06,
+    "score_gamma": 1.25,
+
+    "comp_min_overlap_frac": 0.12,
+    "comp_min_overlap_pix": 16,
+
+    "border_ring": 6,
+    "min_border_contrast": 0.10,
+    "min_border_grad": 0.13,
+
+    "lane_alpha": 0.55,
+    "lane_sat_thr": 0.18,
+    "lane_val_thr": 0.76,
+    "lane_grow_r": 3,
+    "lane_diff_guard": 0.22,
+
+    "lane_box_sat_thr": 0.22,
+    "lane_box_val_thr": 0.68,
+    "lane_box_min_aspect": 6.0,
+    "lane_box_max_edge_density": 0.12,
+    "lane_box_max_border_contrast": 0.08,
+    "lane_box_sobel_ksize": 3,
+
+    "tex_small_area_px": 1500,
+    "tex_small_entropy": 1.80,
+    "tex_min_entropy": 2.30,
+    "tex_max_anisotropy": 0.88,
+    "tex_min_edge_density": 0.06,
+    "tex_sat_guard": 0.18,
+
+    "shadow_v_thr": 0.12,
+    "shadow_s_thr": 0.05,
+    "shadow_h_thr": 0.04,
+    "shadow_v_in_guard": 0.58,
+    "shadow_s_in_guard": 0.20,
+    "shadow_score_margin": 0.02,
+    "shadow_core_or_score": false,
+
+    "bright_pass_v_in": 0.70,
+    "bright_pass_bcon": 0.06,
+    "lane_bright_bcon_pass": 0.09,
+
+    "rescue_min_border_contrast": 0.10,
+    "rescue_min_border_grad": 0.25,
+    "rescue_edge_len_per_area": 0.020,
+
+    "rescue_min_border_contrast_large": 0.15,
+    "rescue_min_border_grad_large": 0.40,
+
+    "sobel_ksize": 3,
+    "entropy_bins": 32
+
+  },
+
+  "rear": {
+    "percentile": 99.65, 
+    "z_k": 0.90,
+    
+    "min_cap": 0.082, 
+    "adaptive": {
+    "enabled": true,
+    "p98_thresh": 0.08,
+    "pos_frac_thresh": 0.006,
+    "relax_step": 0.006,
+    "min_allowed_t": 0.065
+    },
+
+    "shadow_refine": {
+      "enabled": false,
+      "shadow_v_drop": 0.12,
+      "shadow_s_delta": 0.09,
+      "shadow_h_delta_deg": 12.0,
+      "topk_frac": 0.22,
+      "shadow_penalty": 0.80,
+      "sh_ratio_clip": 0.40,
+      "shrink_frac": 0.15
+    },
+
+    "filter_boxes_lane_like": {
+      "enabled": false,
+      "anisotropy_thr": 0.75,
+      "v_thr0": 0.78,
+      "s_thr": 0.22,
+      "lane_frac_thr": 0.70,
+      "shrink_frac": 0.12
+    },
+
+    "shrink_if_hollow": {
+      "enabled": true,
+      "thr": 0.20,
+      "frac": 0.10
+    },
+
+    "hyst_frac": 0.990, 
+    "hyst_delta": 0.012,
+    
+    "open_r": 2, 
+    "close_r": 4, 
+    "extra_dilate": 1,
+
+    "merge_center_dist": 66.0, 
+    "merge_iou": 0.14,
+
+    "min_fill": 0.040,
+    "min_foreground": 36,
+    "min_box_score": 0.075,
+
+    "min_area_frac": 0.00013,
+    "max_area_frac": 0.5,
+
+    "min_side_frac": 0.0040,
+    "max_aspect": 7.5,
+    
+    "border_frac": 0.006,
+    "y_area_alpha": 2.0,
+
+    "area_thresh": 1100,
+    "area_iters_small": 1,
+
+    "glare_alpha": 0.75,
+    "glare_v_pct": 97.0,
+    "glare_sat_thr": 0.35,
+    "glare_grow_r": 4,
+    
+    "pos_adjust": true,
+    "pos_min_frac": 0.0030,
+    "pos_max_frac": 0.025,
+
+    "bg_diff_sigma": 5.0,
+    "bg_diff_thresh": 0.14,
+    "bg_diff_gate_floor": 0.08,
+    "bg_diff_open": 4,
+    "bg_diff_close": 7,
+    "bg_gate_mode": "soft",
+
+    "road_sat_thr": 0.14,
+    "road_edge_thr": 0.06,
+    "score_gamma": 1.25,
+
+    "comp_min_overlap_frac": 0.12,
+    "comp_min_overlap_pix": 16,
+
+    "border_ring": 6,
+    "min_border_contrast": 0.10,
+    "min_border_grad": 0.13,
+
+    "lane_alpha": 0.80,
+    "lane_sat_thr": 0.18,
+    "lane_val_thr": 0.76,
+    "lane_grow_r": 3,
+    "lane_diff_guard": 0.22,
+
+    "lane_box_sat_thr": 0.22,
+    "lane_box_val_thr": 0.68,
+    "lane_box_min_aspect": 10.0,
+    "lane_box_max_edge_density": 0.08,
+    "lane_box_max_border_contrast": 0.06,
+    "lane_box_sobel_ksize": 3,
+
+    "tex_small_area_px": 1500,
+    "tex_small_entropy": 1.50,
+    "tex_min_entropy": 2.00,
+    "tex_max_anisotropy": 0.84,
+    "tex_min_edge_density": 0.05,
+    "tex_sat_guard": 0.15,
+
+    "shadow_v_thr": 0.15,
+    "shadow_s_thr": 0.04,
+    "shadow_h_thr": 0.035,
+    "shadow_v_in_guard": 0.70,
+    "shadow_s_in_guard": 0.20,
+    "shadow_score_margin": 0.05,
+    "shadow_core_or_score": false,
+
+    "bright_pass_v_in": 0.60,
+    "bright_pass_bcon": 0.10,
+    "lane_bright_bcon_pass": 0.09,
+
+    "rescue_min_border_contrast": 0.06,
+    "rescue_min_border_grad": 0.16,
+    "rescue_edge_len_per_area": 0.014,
+
+    "rescue_min_border_contrast_large": 0.15,
+    "rescue_min_border_grad_large": 0.40,
+
+    "sobel_ksize": 3,
+    "entropy_bins": 32
+      
+  }
+
+
+
+}
